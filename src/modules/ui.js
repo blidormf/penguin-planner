@@ -95,6 +95,8 @@ const createTaskElement = (task, projectDiv) => {
         taskElement.className = task.complete ? "completed-task" : "task";
         checkbox.textContent = task.complete ? "✓" : "";
         date.textContent = task.complete ? "Completed" : "Due: " + format(task.dueDate, "dd MMM yyyy");
+        
+        saveProjects(task.project.tasks.map(t => t.project));
     });
 
     deleteButton.addEventListener("click", () => {
