@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+    <title>Penguin Planner</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo-area">
+            <img class="logo" src="./assets/icons/logo.svg">
+            <p class="logotype">Penguin Planner</p>
+        </div>
+        <div class="navbar">
+            <p class="greeting">Welcome, User</p>
+            <img class="user-icon" src="./assets/icons/user.svg">
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="sidebar">
+            <div class="sidebar-actions">
+                <div class="sidebar-action" id="">Today</div>
+                <div class="sidebar-action" id="">This Week</div>
+                <div class="sidebar-action" id="">All</div>
+            </div>
+            <div class="sidebar-projects">
+                <p class="sidebar-projects-heading">Projects</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <dialog class="add-task-dialog">
+        <form>
+            <div>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div>
+                <label for="desc">Description</label>
+                <input type="text" id="desc" name="desc">
+            </div>
+
+            <div>
+                <label for="due-date">Due Date</label>
+                <input type="date" id="due-date" name="due-date" required>
+            </div>
+
+            <div>
+                <p>Priority</p>
+                <div>
+                    <div>
+                        <input type="radio" id="high" name="priority" required checked>
+                        <label for="high">High</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="normal" name="priority" required>
+                        <label for="normal">Normal</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="low" name="priority" required>
+                        <label for="low">Low</label>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" value="default" id="add-book-dialog-button">Add</button>
+                <button formmethod="dialog" value="cancel" id="cancel-dialog-button">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="add-project-dialog">
+        <form>
+            <div>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+
+            <div>
+                <label for="desc">Description</label>
+                <input type="text" id="desc" name="desc">
+            </div>
+
+            <div>
+                <button type="submit" value="default" id="add-book-dialog-button">Add</button>
+                <button formmethod="dialog" value="cancel" id="cancel-dialog-button">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+</body>
+
+</html>

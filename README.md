@@ -1,1 +1,1 @@
-# penguin-planner
+# Penguin Planner

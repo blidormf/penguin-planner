@@ -1,0 +1,389 @@
+/* Variables */
+:root {
+    --color-bg-gradient-start: rgb(245, 250, 253);
+    --color-bg-gradient-end: rgb(218, 240, 253);
+    --color-header-bg: rgb(161, 222, 255);
+    --color-hover-bg: rgba(225, 225, 225, 0.6);
+    --color-task-bg: rgb(203, 237, 255);
+    --color-task-hover-bg: rgb(184, 229, 253);
+    --color-button-bg: rgb(161, 222, 255);
+    --color-button-hover-bg: rgb(135, 210, 251);
+    --color-white: white;
+    --color-high-priority: rgb(255, 216, 216);
+    --color-normal-priority: rgb(255, 254, 229);
+    --color-low-priority: rgb(222, 255, 222);
+    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --font-size-large: 2.8rem;
+    --font-size-medium: 1.8rem;
+    --font-size-small: 1.3rem;
+    --font-size-xsmall: 1.1rem;
+    --font-weight-bold: 900;
+    --font-weight-semibold: 600;
+    --font-weight-extrabold: 800;
+}
+
+/* Body */
+body {
+    height: 100vh;
+    background: linear-gradient(to bottom right, var(--color-bg-gradient-start), var(--color-bg-gradient-end));
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 2%;
+    padding: 1rem;
+    background-color: var(--color-header-bg);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+div.logo-area,
+div.navbar {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    height: 100%
+}
+
+img.logo {
+    width: 56px;
+    height: auto;
+}
+
+img.user-icon {
+    width: 52px;
+    height: auto;
+}
+
+img.user-icon:hover {
+    cursor: pointer;
+}
+
+p.logotype {
+    font-size: var(--font-size-large);
+    font-weight: var(--font-weight-bold);
+}
+
+p.greeting {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Main Content */
+div.main-content {
+    display: grid;
+    margin: 0.5rem 2% 2rem 2%;
+    grid-template-columns: 1fr 3fr;
+    flex: 1;
+}
+
+/* Sidebar */
+div.sidebar {
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+div.sidebar-action {
+    font-weight: var(--font-weight-semibold);
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+div.sidebar-action:hover,
+div.sidebar-projects>.heading:hover {
+    cursor: pointer;
+    background-color: var(--color-hover-bg);
+}
+
+div.sidebar-projects>.heading.selected {
+    background-color: var(--color-hover-bg);
+}
+
+div.sidebar-projects {
+    padding: 0 1rem;
+}
+
+p.sidebar-projects-heading {
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-extrabold);
+    margin-bottom: 0.5rem;
+}
+
+div.sidebar-projects>.heading {
+    margin-left: 1rem;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-project {
+    display: flex;
+    gap: 1rem;
+    margin-left: 1rem;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+button.add-project-button {
+    min-height: 1.8rem;
+    min-width: 1.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--color-button-bg);
+}
+
+button.add-project-button:hover {
+    background-color: var(--color-button-hover-bg);
+    cursor: pointer;
+}
+
+.add-project>p {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Project */
+div.project {
+    border-radius: 0.5rem;
+    margin-left: 8%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+div.project>.heading {
+    font-size: 2.2rem;
+    font-weight: var(--font-weight-extrabold);
+    margin-bottom: 1rem;
+}
+
+div.project>.task,
+div.project>.completed-task {
+    display: flex;
+    align-items: center;
+    margin-left: 2%;
+    justify-content: space-between;
+    background-color: var(--color-task-bg);
+    padding: 0.5rem 1.2rem;
+    border-radius: 0.5rem;
+    gap: 1rem;
+}
+
+div.project>.task:hover {
+    cursor: pointer;
+    background-color: var(--color-task-hover-bg);
+}
+
+div.project>.completed-task {
+    background-color: rgb(175, 204, 219);
+}
+
+div.project>.task>.left,
+div.project>.completed-task>.left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+div.project>.task>.left>.checkbox,
+div.project>.completed-task>.left>.checkbox {
+    min-height: 1.8rem;
+    min-width: 1.8rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: var(--font-weight-bold);
+    background-color: var(--color-white);
+}
+
+div.project>.task>.left>.checkbox:hover,
+div.project>.completed-task>.left>.checkbox:hover {
+    cursor: default;
+}
+
+div.project>.task>.left>.title, 
+div.project>.completed-task>.left>.title {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+}
+
+div.project>.task>.date,
+div.project>.completed-task>.date {
+    font-size: var(--font-size-xsmall);
+}
+
+div.project>.task>.right,
+div.project>.completed-task>.right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.add-task {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2%;
+    align-items: center;
+    padding: 0.5rem 1.2rem;
+}
+
+button.add-task-button {
+    min-height: 1.8rem;
+    min-width: 1.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--color-button-bg);
+}
+
+button.add-task-button:hover {
+    background-color: var(--color-button-hover-bg);
+    cursor: pointer;
+}
+
+.add-task>p {
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Dialogs */
+dialog.add-task-dialog,
+dialog.add-project-dialog {
+    margin: auto;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+}
+
+dialog.add-task-dialog::backdrop,
+dialog.add-project-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+dialog.add-task-dialog form,
+dialog.add-project-dialog form {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+dialog.add-task-dialog form div,
+dialog.add-project-dialog form div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+dialog.add-task-dialog form div button,
+dialog.add-project-dialog form div button {
+    flex: 1;
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-semibold);
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--color-button-bg);
+}
+
+dialog.add-task-dialog form div button:hover,
+dialog.add-project-dialog form div button:hover {
+    background-color: var(--color-button-hover-bg);
+    cursor: pointer;
+}
+
+dialog.add-task-dialog form div:nth-child(4) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+dialog.add-task-dialog form div:nth-child(4)>div>div>label {
+    font-size: 1.2rem;
+}
+
+input#title,
+input#desc,
+input#due-date {
+    padding: 4px 8px;
+    width: 300px;
+    border-radius: 0.5rem;
+}
+
+label {
+    font-weight: var(--font-weight-semibold);
+}
+
+dialog.add-task-dialog>form>div>p {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-semibold);
+}
+div.project>.task>.left>.checkbox.high-priority,
+div.project>.completed-task>.left>.checkbox.high-priority {
+    background-color: var(--color-high-priority);
+}
+
+div.project>.task>.left>.checkbox.normal-priority,
+div.project>.completed-task>.left>.checkbox.normal-priority {
+    background-color: var(--color-normal-priority);
+}
+
+div.project>.task>.left>.checkbox.low-priority,
+div.project>.completed-task>.left>.checkbox.low-priority {
+    background-color: var(--color-low-priority);
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: var(--font-weight-extrabold);
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    opacity: 0;
+}
+
+.heading:hover .delete-button,
+.task:hover .delete-button,
+.completed-task:hover .delete-button {
+    opacity: 1;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
