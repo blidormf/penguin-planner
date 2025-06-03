@@ -5,3 +5,23 @@
     user-select: none;
     -webkit-user-drag: none;
 }
+
+@media (max-width: 900px) {
+    body {
+        font-size: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    html, body {
+        width: 100vw;
+        overflow-x: hidden;
+        background: var(--color-bg-gradient-end, #daf0fd);
+    }
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-size: 85%;
+    }
+}
